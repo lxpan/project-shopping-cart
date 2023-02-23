@@ -1,7 +1,11 @@
 import React from 'react';
 
 function Header() {
-    return <div>Header Component</div>;
+    return (
+        <div>
+            <h1>Header</h1>
+        </div>
+    );
 }
 
 export default Header;
