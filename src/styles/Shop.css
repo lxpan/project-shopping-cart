@@ -1,10 +1,19 @@
 .shop-container {
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 5rem 1fr;
+}
+
+.shop-title {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
 .item-grid {
-    display: flex;
-    gap: 10px;
+    display: grid;
+    grid-template-rows: 550px;
+    grid-template-columns: repeat(auto-fill, 500px);
+    /* grid-template-columns: 400px 400px 400px; */
+    grid-column-gap: 15px;
+    justify-content: center;
 }
