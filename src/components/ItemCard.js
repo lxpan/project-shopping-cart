@@ -17,7 +17,9 @@ function ItemCard(props) {
             </div>
             <div className="item-name">{name}</div>
             <div className="item-cost">${cost}</div>
-            <button className="add-cart-btn">Add to Cart</button>
+            <div className="add-cart-btn-container">
+                <button className="add-cart-btn">Add to Cart</button>
+            </div>
         </div>
     );
 }

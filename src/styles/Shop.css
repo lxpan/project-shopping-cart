@@ -13,7 +13,5 @@
     display: grid;
     grid-template-rows: 550px;
     grid-template-columns: repeat(auto-fill, 500px);
-    /* grid-template-columns: 400px 400px 400px; */
-    grid-column-gap: 15px;
     justify-content: center;
 }
