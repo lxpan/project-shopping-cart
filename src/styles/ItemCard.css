@@ -6,8 +6,10 @@
 
 img {
     width: 400px;
+
 }
 
+.item-image,
 .item-brand,
 .item-name,
 .item-cost,
