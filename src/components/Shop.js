@@ -54,7 +54,20 @@ function Shop() {
 
     return (
         <div className="shop-container">
-            <h1>Shop</h1>
+            <h1 className="shop-title">Shop</h1>
+            <div className="item-grid">
+                {items.map((item) => (
+                    <ItemCard
+                        key={item.id}
+                        name={item.name}
+                        alias={item.alias}
+                        id={item.id}
+                        image={item.image}
+                        cost={item.cost}
+                        brand={item.brand}
+                    />
+                ))}
+            </div>
         </div>
     );
 }

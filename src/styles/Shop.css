@@ -1,0 +1,10 @@
+.shop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-grid {
+    display: flex;
+    gap: 10px;
+}
