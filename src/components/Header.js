@@ -19,6 +19,7 @@ function Header() {
                 <Link style={navStyle} to="shop">
                     <li>Shop</li>
                 </Link>
+                <li>Shopping Cart</li>
             </ul>
         </nav>
     );
