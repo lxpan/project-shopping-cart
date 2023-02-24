@@ -1,9 +1,12 @@
 import React from 'react';
+import '../styles/Home.css';
 
 function Home() {
     return (
-        <div>
-            <h1>Homepage</h1>
+        <div className="home-container">
+            <h1>
+                <em>The Alpine Collection</em>
+            </h1>
         </div>
     );
 }
