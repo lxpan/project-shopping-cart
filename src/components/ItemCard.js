@@ -8,7 +8,9 @@ function ItemCard(props) {
 
     return (
         <div className="item-card-container">
-            <img src={image} alt="" srcSet="" />
+            <div className="item-image">
+                <img src={image} alt="" srcSet="" />
+            </div>
             <div className="item-brand">{brand.toUpperCase()}</div>
             <div className="item-alias">
                 <em>{alias}</em>
