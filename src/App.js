@@ -27,7 +27,7 @@ function App() {
     return (
         <div>
             <BrowserRouter>
-                <Header />
+                <Header cart={cartItems} />
                 <Routes>
                     <Route path="/" element={<Home />} exact />
                     <Route

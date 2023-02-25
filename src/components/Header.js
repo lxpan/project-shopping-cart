@@ -3,10 +3,14 @@ import '../styles/Header.css';
 
 import { Link, Router } from 'react-router-dom';
 
-function Header() {
+function Header(props) {
+    const { cart } = props;
+
     const navStyle = {
         color: 'white',
     };
+
+    const itemsInCartAmount = Object.keys(cart).length;
 
     return (
         <nav>
@@ -19,7 +23,7 @@ function Header() {
                 <Link style={navStyle} to="shop">
                     <li>Shop</li>
                 </Link>
-                <li>Shopping Cart</li>
+                <li>{`Cart(${itemsInCartAmount})`}</li>
             </ul>
         </nav>
     );
