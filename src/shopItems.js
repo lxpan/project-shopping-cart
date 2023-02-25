@@ -1,8 +1,8 @@
 import spb123j1 from './assets/images/SPB123J1.png';
 import spb155j1 from './assets/images/SPB155J1.png';
 import spb249j1 from './assets/images/SPB249J1.png';
-import murph from './assets/images/khaki-field-murph.webp';
-import coop from './assets/images/pilot-day-date.webp';
+import murph from './assets/images/hamilton-murph.avif';
+import coop from './assets/images/hamilton-coop.webp';
 
 const shopItems = [
     {
