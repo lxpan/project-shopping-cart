@@ -13,7 +13,7 @@ function App() {
         const itemObj = shopItems.filter((item) => item.id === itemId);
 
         const itemCartObj = {
-            itemInfo: itemObj,
+            itemInfo: { ...itemObj[0] },
             quantity,
         };
 
