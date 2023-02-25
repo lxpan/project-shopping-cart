@@ -1,7 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Header.css';
-
-import { Link, Router } from 'react-router-dom';
 
 function Header(props) {
     const { cart } = props;
@@ -23,7 +22,7 @@ function Header(props) {
                 <Link style={navStyle} to="shop">
                     <li>Shop</li>
                 </Link>
-                <li>{`Cart(${itemsInCartAmount})`}</li>
+                <li>{`Cart (${itemsInCartAmount})`}</li>
             </ul>
         </nav>
     );
