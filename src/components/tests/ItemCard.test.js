@@ -26,7 +26,7 @@ describe('Testing increment and decrement buttons', () => {
         act(() => UserEvent.click(incrementBtn));
         act(() => UserEvent.click(incrementBtn));
 
-        expect(counter.value).toEqual('2');
+        expect(counter.value).toEqual('3');
     });
 
     test('Quantity is decremented on decrement button click', async () => {
@@ -42,7 +42,7 @@ describe('Testing increment and decrement buttons', () => {
         act(() => UserEvent.click(incrementBtn));
         act(() => UserEvent.click(decrementBtn));
 
-        expect(counter.value).toEqual('1');
+        expect(counter.value).toEqual('2');
     });
 
     test('Decrement button does not cause quantity to go below zero', async () => {

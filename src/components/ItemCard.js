@@ -7,7 +7,7 @@ function ItemCard(props) {
     } = props;
 
     const [isMouseOver, setIsMouseOver] = useState(false);
-    const [itemOrderQty, setItemOrderQty] = useState(0);
+    const [itemOrderQty, setItemOrderQty] = useState(1);
 
     const incrementOrder = () => setItemOrderQty(itemOrderQty + 1);
     const decrementOrder = () => {
