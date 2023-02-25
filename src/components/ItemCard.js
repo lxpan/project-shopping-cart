@@ -21,7 +21,7 @@ function ItemCard(props) {
         <div>
             <div className="increment-item-qty">
                 <button onClick={decrementOrder}>-</button>
-                <input type="text" value={itemOrderQty} />
+                <input type="text" value={itemOrderQty} readOnly />
                 <button onClick={incrementOrder}>+</button>
             </div>
             <button onClick={() => handleAddToCart(id, itemOrderQty)} className="add-cart-btn">
