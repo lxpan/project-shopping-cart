@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ShoppingCart from './ShoppingCart';
 import '../styles/Header.css';
 
 function Header(props) {
@@ -22,7 +23,12 @@ function Header(props) {
                 <Link style={navStyle} to="shop">
                     <li>Shop</li>
                 </Link>
-                <li>{`Cart (${itemsInCartAmount})`}</li>
+                <li>
+                    <div className="cart-trigger">
+                        {`Cart (${itemsInCartAmount})`}
+                        <ShoppingCart cart={cart} />
+                    </div>
+                </li>
             </ul>
         </nav>
     );
