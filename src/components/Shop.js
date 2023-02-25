@@ -1,9 +1,10 @@
 import React from 'react';
 import ItemCard from './ItemCard';
-import shopItems from '../shopItems';
 import '../styles/Shop.css';
 
-function Shop() {
+function Shop(props) {
+    const { shopItems, handleAddToCart } = props;
+
     return (
         <div className="shop-container">
             <h1 className="shop-title">Shop</h1>
@@ -17,6 +18,7 @@ function Shop() {
                         image={item.image}
                         cost={item.cost}
                         brand={item.brand}
+                        handleAddToCart={handleAddToCart}
                     />
                 ))}
             </div>

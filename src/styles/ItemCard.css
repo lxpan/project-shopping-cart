@@ -5,6 +5,10 @@
     width: 100%px;
 }
 
+.item-card-container:hover {
+    background: #f0ead6;
+}
+
 img {
     width: 400px;
 
@@ -32,6 +36,16 @@ img {
     justify-content: center;
 }
 
+.increment-item-qty input {
+    width: 50px;
+    text-align: center;
+}
+
+.increment-item-qty button {
+    width: 40px;
+    height: 40px;
+}
+
 .add-cart-btn {
     bottom: none;
     width: 400px;
@@ -41,4 +55,13 @@ img {
     color: white;
     font-size: 1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.increment-item-qty {
+    display: flex;
+    justify-content: center;
+}
+
+.hide {
+    display: none;
 }
