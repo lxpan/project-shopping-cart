@@ -44,6 +44,19 @@ describe('Testing increment and decrement buttons', () => {
 
         expect(counter.value).toEqual('1');
     });
+
+    test('Decrement button does not cause quantity to go below zero', async () => {
+        const itemContainer = document.querySelector('.item-card-container');
+
+        act(() => UserEvent.hover(itemContainer));
+
+        const counter = await waitFor(() => screen.getByRole('textbox'));
+        const decrementBtn = await waitFor(() => screen.getByText('-'));
+
+        act(() => UserEvent.click(decrementBtn));
+
+        expect(counter.value).toEqual('0');
+    });
 });
 
 describe('Testing add to cart button', () => {
