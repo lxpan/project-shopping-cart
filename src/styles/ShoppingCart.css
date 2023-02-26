@@ -29,9 +29,36 @@
     gap: 20px;
 }
 
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-item-qty-controls {
+    display: flex;
+}
+
+.cart-item-qty-controls button {
+    width: 25px;
+    height: 25px;
+}
+
+.cart-item-qty-controls input {
+    width: 3rem;
+    text-align: center;
+}
+
+.cart-item-cost {
+    display: flex;
+    align-items: center;
+    color: red;
+}
+
 .cart-item-container {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 100px 1fr 1fr;
 }
 
 .cart-item-image img {
