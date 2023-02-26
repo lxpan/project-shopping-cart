@@ -9,25 +9,39 @@ import './App.css';
 function App() {
     const [cartItems, setCartItems] = useState({});
 
-    function handleAddToCart(itemId, quantity) {
+    function handleAddToCart(itemId, quantity, fromCart = false) {
         const itemObj = shopItems.filter((item) => item.id === itemId);
+        let itemCartObj;
 
-        const itemCartObj = {
-            itemInfo: { ...itemObj[0] },
-            quantity,
-        };
+        // check if item already exists in cart
+        if (Object.keys(cartItems).includes(itemId) && !fromCart) {
+            console.log(`Item: ${itemId} already in cart!`);
+
+            itemCartObj = {
+                itemInfo: { ...itemObj[0] },
+                quantity: cartItems[itemId].quantity + quantity,
+            };
+        }
+        else {
+            itemCartObj = {
+                itemInfo: { ...itemObj[0] },
+                quantity,
+            };
+        }
 
         setCartItems({ ...cartItems, [itemId]: itemCartObj });
     }
 
-    useEffect(() => {
-        console.log(cartItems);
-    }, [cartItems]);
+    function modifyQuantityFromShoppingCart() {}
+
+    // useEffect(() => {
+    //     console.log(cartItems);
+    // }, [cartItems]);
 
     return (
         <div>
             <BrowserRouter>
-                <Header cart={cartItems} />
+                <Header cart={cartItems} handleAddToCart={handleAddToCart} />
                 <Routes>
                     <Route path="/" element={<Home />} exact />
                     <Route
