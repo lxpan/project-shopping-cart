@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/ShoppingCart.css';
 
 function ShoppingCart(props) {
-    const { cart } = props;
+    const { cart, handleAddToCart } = props;
 
     /* Set the width of the side navigation to 250px */
     function openNav() {
@@ -13,6 +13,10 @@ function ShoppingCart(props) {
     function closeNav() {
         document.getElementById('mySidenav').style.width = '0';
     }
+
+    useEffect(() => {
+        console.log(cart);
+    }, [cart]);
 
     const myCart = () => {
         const cartItems = [];
@@ -25,11 +29,28 @@ function ShoppingCart(props) {
                         <img src={info.image} alt="" />
                     </div>
                     <div className="cart-item-details">
-                        <div className="cart-item-brand">{info.brand}</div>
                         <div className="cart-item-name">{info.name}</div>
-                        <div className="cart-item-id">{id}</div>
-                        <div className="cart-item-cost">${info.cost}</div>
+                        <div className="cart-item-qty-controls">
+                            <button
+                                onClick={() => handleAddToCart(
+                                    id,
+                                    value.quantity > 0 ? value.quantity - 1 : value.quantity,
+                                    true,
+                                )
+                                }
+                            >
+                                -
+                            </button>
+                            <input type="text" value={`Qty: ${value.quantity}`} readOnly />
+                            <button
+                                onClick={() => handleAddToCart(id, value.quantity + 1, true)}
+                                className="button"
+                            >
+                                +
+                            </button>
+                        </div>
                     </div>
+                    <div className="cart-item-cost">${info.cost}</div>
                 </div>
             );
 

@@ -4,7 +4,7 @@ import ShoppingCart from './ShoppingCart';
 import '../styles/Header.css';
 
 function Header(props) {
-    const { cart } = props;
+    const { cart, handleAddToCart } = props;
 
     const navStyle = {
         color: 'white',
@@ -26,7 +26,7 @@ function Header(props) {
                 <li>
                     <div className="cart-trigger">
                         {`Cart (${itemsInCartAmount})`}
-                        <ShoppingCart cart={cart} />
+                        <ShoppingCart cart={cart} handleAddToCart={handleAddToCart} />
                     </div>
                 </li>
             </ul>
