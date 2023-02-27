@@ -19,7 +19,7 @@ function App() {
 
             itemCartObj = {
                 itemInfo: { ...itemObj[0] },
-                quantity: cartItems[itemId].quantity + quantity,
+                quantity: parseInt(cartItems[itemId].quantity, 10) + parseInt(quantity, 10),
             };
         }
         else {
