@@ -14,9 +14,11 @@ function ShoppingCart(props) {
         document.getElementById('mySidenav').style.width = '0';
     }
 
-    useEffect(() => {
-        console.log(cart);
-    }, [cart]);
+    // useEffect(() => {
+    //     // const parse = JSON.stringify(cart);
+    //     // console.log(parse);
+    //     console.log(cart);
+    // }, [cart]);
 
     const myCart = () => {
         const cartItems = [];
@@ -50,7 +52,10 @@ function ShoppingCart(props) {
                             </button>
                         </div>
                     </div>
-                    <div className="cart-item-cost">${info.cost}</div>
+                    <div className="cart-item-cost">
+                        ${info.cost}
+                        {/* ${info.cost} {`// Total: $${info.cost * value.quantity}`} */}
+                    </div>
                 </div>
             );
 
