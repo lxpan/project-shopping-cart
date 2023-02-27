@@ -44,7 +44,7 @@ function App() {
     }, [cartItems]);
 
     return (
-        <div>
+        <div className="app">
             <BrowserRouter>
                 <Header
                     cart={cartItems}
