@@ -1,4 +1,5 @@
 .home-container {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     height: 100vh;
@@ -25,4 +26,17 @@
     color: white;
     position: absolute;
     bottom: 0;
+}
+
+.home-title {
+    position: absolute;
+    color: white;
+
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 150px;
+    width: 700px;
+    font-size: 2em;
 }

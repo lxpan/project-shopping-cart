@@ -26,6 +26,9 @@ const style = {
 function Home() {
     return (
         <div className="home-container">
+            <div className="home-title">
+                <h1>The Alpine Collection</h1>
+            </div>
             <div className="home-left" style={style.left}>
                 <img src={watchLeft} alt="" srcSet="" />
                 <div className="attribution">Photo by Markus Spiske</div>
@@ -38,9 +41,6 @@ function Home() {
                 <img src={watchRight} alt="" srcSet="" />
                 <div className="attribution">Photo by Yoal Desurmont</div>
             </div>
-            {/* <h1>
-                <em>The Alpine Collection</em>
-            </h1> */}
         </div>
     );
 }
