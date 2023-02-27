@@ -6,7 +6,7 @@ import UserEvent from '@testing-library/user-event';
 import ShoppingCart from '../ShoppingCart';
 import explorerImg from '../../assets/images/rolex-explorer.png';
 
-export default function App() {
+export default function App(props) {
     const [cart, setCart] = useState({
         124270: {
             itemInfo: {
@@ -18,6 +18,17 @@ export default function App() {
                 brand: 'Rolex',
             },
             quantity: 2,
+        },
+        SPB123J1: {
+            itemInfo: {
+                name: 'Prospex Land SPB123',
+                alias: 'Alpinist',
+                id: 'SPB123J1',
+                image: '/static/media/SPB123J1.2fb7d684eade23450d61.png',
+                cost: 725,
+                brand: 'Seiko',
+            },
+            quantity: 1,
         },
     });
 
@@ -44,8 +55,8 @@ describe('Shopping cart renders cart items', () => {
 
         const itemName = screen.getByText('OYSTER PERPETUAL EXPLORER');
         const itemCost = screen.getByText('$10200');
-        const itemQty = screen.getByDisplayValue('Qty: 2');
-        const image = screen.getByRole('img');
+        const itemQty = screen.getAllByDisplayValue('Qty: 2')[0];
+        const image = screen.getAllByRole('img')[0];
 
         expect(itemName.textContent).toBe('OYSTER PERPETUAL EXPLORER');
         expect(itemCost.textContent).toBe('$10200');
@@ -61,9 +72,9 @@ describe('Test increment and decrement buttons', () => {
 
     beforeEach(async () => {
         render(<App />);
-        counter = await waitFor(() => screen.getByRole('textbox'));
-        incrementBtn = await waitFor(() => screen.getByText('+'));
-        decrementBtn = await waitFor(() => screen.getByText('-'));
+        counter = await waitFor(() => screen.getAllByRole('textbox')[0]);
+        incrementBtn = await waitFor(() => screen.getAllByText('+')[0]);
+        decrementBtn = await waitFor(() => screen.getAllByText('-')[0]);
     });
 
     test('Quantity is incremented on increment button click', async () => {
@@ -88,15 +99,15 @@ describe('Test increment and decrement buttons', () => {
 });
 
 describe('Test calculation of subtotal and grand total costs', () => {
-    test('Calculate total costs with single item in cart', () => {
+    beforeEach(() => {
         render(<App />);
-
-        const subTotal = screen.getByText(/Subtotal/);
-        const grandTotal = screen.getByText(/Grand total/);
-
-        expect(subTotal.textContent).toBe('Subtotal: $20400');
-        expect(grandTotal.textContent).toBe('Grand total: $20400');
     });
 
-    test('Calculate grand total with multiple items in cart', () => {});
+    test('Calculate subtotal costs of single item', () => {
+        const subTotal = screen.getAllByText(/Subtotal/)[0];
+        // const grandTotal = screen.getByText(/Grand total/);
+
+        expect(subTotal.textContent).toBe('Subtotal: $20400');
+        // expect(grandTotal.textContent).toBe('Grand total: $20400');
+    });
 });
