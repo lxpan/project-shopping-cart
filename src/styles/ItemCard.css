@@ -1,12 +1,7 @@
-:root {
-    --item-card-hover-background-colour: #dde5f4;
-}
-
 .item-card-container {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    width: 100%px;
 }
 
 .item-card-container:hover {
@@ -14,8 +9,8 @@
 }
 
 .item-image img {
-    height: 400px;
-
+    height: var(--item-card-image-height);
+    margin-top: 10px;
 }
 
 .item-image,
@@ -35,9 +30,9 @@
     color: rgb(119, 118, 118)
 }
 
-.add-cart-btn-container {
+.item-card-controls-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .increment-item-qty input {
@@ -47,13 +42,13 @@
 
 .increment-item-qty button {
     width: 40px;
-    height: 40px;
+    height: var(--item-card-change-qty-button-height);
 }
 
 .add-cart-btn {
     bottom: none;
     width: 300px;
-    height: 40px;
+    height: var(--item-card-add-cart-btn-height);
     margin: 0;
     background-color: black;
     color: white;

@@ -1,3 +1,12 @@
+:root {
+    --item-card-hover-background-colour: #dde5f4;
+    --item-card-image-height: 350px;
+    --item-card-change-qty-button-height: 40px;
+    --item-card-add-cart-btn-height: 40px;
+    --item-card-controls-height: calc(var(--item-card-change-qty-button-height) + var(--item-card-add-cart-btn-height));
+    --shop-item-grid-row-size: calc(10px + 350px + (80px) + 80px + 25px);
+}
+
 .shop-container {
     display: flex;
     flex-direction: column;
@@ -10,7 +19,7 @@
 
 .item-grid {
     display: grid;
-    grid-template-rows: 600px;
+    grid-template-rows: var(--shop-item-grid-row-size);
     grid-template-columns: repeat(auto-fill, 300px);
     gap: 25px;
     justify-content: center;

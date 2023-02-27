@@ -23,7 +23,7 @@ function ItemCard(props) {
     };
 
     const addToCartDiv = () => (
-        <div>
+        <div className="item-card-controls-container">
             <div className="increment-item-qty">
                 <button onClick={decrementOrder}>-</button>
                 <input onChange={handleQtyChange} type="text" value={itemOrderQty} />
@@ -34,7 +34,6 @@ function ItemCard(props) {
             </button>
         </div>
     );
-    const addCartBtn = isMouseOver ? addToCartDiv() : null;
 
     return (
         <div
@@ -51,7 +50,7 @@ function ItemCard(props) {
             </div>
             <div className="item-name">{name}</div>
             <div className="item-cost">${cost}</div>
-            <div className="add-cart-btn-container">{addCartBtn}</div>
+            {isMouseOver ? addToCartDiv() : null}
         </div>
     );
 }
