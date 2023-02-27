@@ -1,10 +1,15 @@
+:root {
+    --header-background-colour: #1b232b;
+    --header-font-colour: white;
+}
+
 nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 10vh;
-    background: rgb(73, 79, 82);
-    color: white;
+    background: var(--header-background-colour);
+    color: var(--header-font-colour);
 }
 
 .nav-links {

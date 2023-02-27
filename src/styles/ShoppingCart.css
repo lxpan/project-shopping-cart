@@ -1,3 +1,7 @@
+:root {
+    --shopping-cart-background-colour: #b1c4d8;
+}
+
 /* The side navigation menu */
 .sidenav {
     height: 100%;
@@ -11,7 +15,7 @@
     top: 0;
     /* Stay at the top */
     right: 0;
-    background-color: wheat;
+    background-color: var(--shopping-cart-background-colour);
     /* Black*/
     overflow-x: hidden;
     /* Disable horizontal scroll */
