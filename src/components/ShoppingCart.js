@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import '../styles/ShoppingCart.css';
 
 function ShoppingCart(props) {
-    const { cart, handleAddToCart } = props;
+    const { cart, handleAddToCart, deleteCartItem } = props;
 
     /* Set the width of the side navigation to 250px */
     function openNav() {
@@ -49,6 +49,12 @@ function ShoppingCart(props) {
                                 className="button"
                             >
                                 +
+                            </button>
+                            <button
+                                className="cart-item-delete-btn"
+                                onClick={() => deleteCartItem(id)}
+                            >
+                                ×
                             </button>
                         </div>
                     </div>

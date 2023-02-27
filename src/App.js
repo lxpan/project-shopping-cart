@@ -32,16 +32,25 @@ function App() {
         setCartItems({ ...cartItems, [itemId]: itemCartObj });
     }
 
-    function modifyQuantityFromShoppingCart() {}
+    function deleteCartItem(itemId) {
+        console.log(`deleting item... ${itemId}`);
+        const newCart = { ...cartItems };
+        delete newCart[itemId];
+        setCartItems(newCart);
+    }
 
-    // useEffect(() => {
-    //     console.log(cartItems);
-    // }, [cartItems]);
+    useEffect(() => {
+        console.log(cartItems);
+    }, [cartItems]);
 
     return (
         <div>
             <BrowserRouter>
-                <Header cart={cartItems} handleAddToCart={handleAddToCart} />
+                <Header
+                    cart={cartItems}
+                    handleAddToCart={handleAddToCart}
+                    deleteCartItem={deleteCartItem}
+                />
                 <Routes>
                     <Route path="/" element={<Home />} exact />
                     <Route
