@@ -86,3 +86,17 @@ describe('Test increment and decrement buttons', () => {
         expect(counter.value).toEqual('Qty: 0');
     });
 });
+
+describe('Test calculation of subtotal and grand total costs', () => {
+    test('Calculate total costs with single item in cart', () => {
+        render(<App />);
+
+        const subTotal = screen.getByText(/Subtotal/);
+        const grandTotal = screen.getByText(/Grand total/);
+
+        expect(subTotal.textContent).toBe('Subtotal: $20400');
+        expect(grandTotal.textContent).toBe('Grand total: $20400');
+    });
+
+    test('Calculate grand total with multiple items in cart', () => {});
+});

@@ -15,9 +15,9 @@ function ShoppingCart(props) {
     }
 
     // useEffect(() => {
-    //     // const parse = JSON.stringify(cart);
-    //     // console.log(parse);
-    //     console.log(cart);
+    //     const parse = JSON.stringify(cart);
+    //     console.log(parse);
+    //     // console.log(cart);
     // }, [cart]);
 
     const myCart = () => {
@@ -52,9 +52,9 @@ function ShoppingCart(props) {
                             </button>
                         </div>
                     </div>
-                    <div className="cart-item-cost">
-                        ${info.cost}
-                        {/* ${info.cost} {`// Total: $${info.cost * value.quantity}`} */}
+                    <div className="cart-item-cost">${info.cost}</div>
+                    <div className="cart-item-subtotal">
+                        Subtotal: ${info.cost * value.quantity}
                     </div>
                 </div>
             );
@@ -65,6 +65,18 @@ function ShoppingCart(props) {
         return cartItems;
     };
 
+    const getGrandTotalCost = () => {
+        const cartItems = Object.values(cart);
+        const grandTotal =
+            cartItems.length > 0 ?
+                cartItems.reduce(
+                    (acc, current) => acc + current.quantity * current.itemInfo.cost,
+                    0,
+                ) :
+                0;
+        return grandTotal;
+    };
+
     return (
         <div className="shopping-cart-container">
             <div id="mySidenav" className="sidenav">
@@ -72,6 +84,7 @@ function ShoppingCart(props) {
                     &times;
                 </a>
                 <div className="shopping-cart-items">{myCart()}</div>
+                <div className="shopping-cart-total-costs">Grand total: ${getGrandTotalCost()}</div>
             </div>
             <span style={{ fontSize: '30px', cursor: 'pointer' }} onClick={openNav}>
                 &#9776;

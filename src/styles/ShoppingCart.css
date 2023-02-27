@@ -56,9 +56,22 @@
     color: red;
 }
 
+.cart-item-subtotal {
+    display: flex;
+    align-items: center;
+}
+
+.shopping-cart-total-costs {
+    display: flex;
+    color: black;
+    justify-content: flex-end;
+    margin-right: 20px;
+    font-size: 1.5rem;
+}
+
 .cart-item-container {
     display: grid;
-    grid-template-columns: 100px 1fr 1fr;
+    grid-template-columns: 100px 200px 1fr 1fr;
 }
 
 .cart-item-image img {
