@@ -35,3 +35,21 @@ export default function App() {
 
     return <ShoppingCart cart={cart} handleAddToCart={handleAddToCart} />;
 }
+
+describe('Shopping cart renders cart items', () => {
+    test('Cart items are shown in shopping cart', () => {
+        // const mockCallback = jest.fn();
+        // render(<ShoppingCart cart={cart} handleAddToCart={mockCallback} />);
+        render(<App />);
+
+        const itemName = screen.getByText('OYSTER PERPETUAL EXPLORER');
+        const itemCost = screen.getByText('$10200');
+        const itemQty = screen.getByDisplayValue('Qty: 1');
+        const image = screen.getByRole('img');
+
+        expect(itemName.textContent).toBe('OYSTER PERPETUAL EXPLORER');
+        expect(itemCost.textContent).toBe('$10200');
+        expect(itemQty.value).toBe('Qty: 1');
+        expect(image).toHaveAttribute('src', 'rolex-explorer.png');
+    });
+});
