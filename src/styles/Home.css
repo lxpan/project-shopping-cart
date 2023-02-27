@@ -17,7 +17,7 @@
 .home-left img,
 .home-middle img,
 .home-right img {
-    height: 300px;
+    height: 400px;
     pointer-events: none;
     user-select: none;
     -drag: none;

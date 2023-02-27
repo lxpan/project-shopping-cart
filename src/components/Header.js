@@ -14,7 +14,9 @@ function Header(props) {
 
     return (
         <nav>
-            <h3>Logo</h3>
+            <div className="header-heading-group">
+                <div className="header-heading">WATCH</div>
+            </div>
             <ul className="nav-links">
                 <Link style={navStyle} to="/">
                     <li>Home</li>

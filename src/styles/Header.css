@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Courier+Prime&display=swap');
+
 :root {
     --header-background-colour: #1b232b;
     --header-font-colour: white;
@@ -10,6 +12,22 @@ nav {
     min-height: 10vh;
     background: var(--header-background-colour);
     color: var(--header-font-colour);
+}
+
+.header-heading-group {
+    display: flex;
+    pointer-events: none;
+    user-select: none;
+}
+
+.header-heading {
+    font-family: 'Courier Prime', monospace;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.header-heading::first-letter {
+    font-size: 3rem;
 }
 
 .nav-links {
