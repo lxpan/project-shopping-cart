@@ -17,7 +17,7 @@ export default function App() {
                 cost: 10200,
                 brand: 'Rolex',
             },
-            quantity: 1,
+            quantity: 2,
         },
     });
 
@@ -30,7 +30,7 @@ export default function App() {
 
         setCart(myCart);
 
-        console.log(cart);
+        // console.log(cart);
     };
 
     return <ShoppingCart cart={cart} handleAddToCart={handleAddToCart} />;
@@ -44,17 +44,17 @@ describe('Shopping cart renders cart items', () => {
 
         const itemName = screen.getByText('OYSTER PERPETUAL EXPLORER');
         const itemCost = screen.getByText('$10200');
-        const itemQty = screen.getByDisplayValue('Qty: 1');
+        const itemQty = screen.getByDisplayValue('Qty: 2');
         const image = screen.getByRole('img');
 
         expect(itemName.textContent).toBe('OYSTER PERPETUAL EXPLORER');
         expect(itemCost.textContent).toBe('$10200');
-        expect(itemQty.value).toBe('Qty: 1');
+        expect(itemQty.value).toBe('Qty: 2');
         expect(image).toHaveAttribute('src', 'rolex-explorer.png');
     });
 });
 
-describe('Testing increment and decrement buttons', () => {
+describe('Test increment and decrement buttons', () => {
     let counter;
     let incrementBtn;
     let decrementBtn;
@@ -69,17 +69,17 @@ describe('Testing increment and decrement buttons', () => {
     test('Quantity is incremented on increment button click', async () => {
         act(() => UserEvent.click(incrementBtn));
 
-        expect(counter.value).toEqual('Qty: 2');
+        expect(counter.value).toEqual('Qty: 3'); // 2 -> 3
     });
 
     test('Quantity is decremented on decrement button click', async () => {
-        act(() => UserEvent.click(incrementBtn)); // 1 -> 2
         act(() => UserEvent.click(decrementBtn)); // 2 -> 1
 
         expect(counter.value).toEqual('Qty: 1');
     });
 
     test('Decrement button does not cause quantity to go below zero', async () => {
+        act(() => UserEvent.click(decrementBtn)); // 2 -> 1
         act(() => UserEvent.click(decrementBtn)); // 1 -> 0
         act(() => UserEvent.click(decrementBtn)); // 0
 
