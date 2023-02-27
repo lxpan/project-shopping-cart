@@ -17,11 +17,16 @@ function ItemCard(props) {
         }
     };
 
+    const handleQtyChange = (e) => {
+        console.log(e.currentTarget.value);
+        setItemOrderQty(e.currentTarget.value);
+    };
+
     const addToCartDiv = () => (
         <div>
             <div className="increment-item-qty">
                 <button onClick={decrementOrder}>-</button>
-                <input type="text" value={itemOrderQty} readOnly />
+                <input onChange={handleQtyChange} type="text" value={itemOrderQty} />
                 <button onClick={incrementOrder}>+</button>
             </div>
             <button onClick={() => handleAddToCart(id, itemOrderQty)} className="add-cart-btn">
