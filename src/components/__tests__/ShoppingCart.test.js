@@ -43,7 +43,6 @@ export default function App() {
     };
 
     const deleteCartItem = (itemId) => {
-        console.log(`deleting item... ${itemId}`);
         const newCart = { ...cart };
         delete newCart[itemId];
         setCart(newCart);
@@ -78,7 +77,6 @@ describe('Test adding and removing items', () => {
 
         // Get the second close button (i.e. skip the close shopping cart button)
         const deleteBtn = screen.getAllByText('×')[1];
-        screen.debug(deleteBtn);
 
         act(() => UserEvent.click(deleteBtn));
 
