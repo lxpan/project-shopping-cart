@@ -42,13 +42,24 @@ export default function App() {
         setCart(myCart);
     };
 
-    return <ShoppingCart cart={cart} handleAddToCart={handleAddToCart} />;
+    const deleteCartItem = (itemId) => {
+        console.log(`deleting item... ${itemId}`);
+        const newCart = { ...cart };
+        delete newCart[itemId];
+        setCart(newCart);
+    };
+
+    return (
+        <ShoppingCart
+            cart={cart}
+            handleAddToCart={handleAddToCart}
+            deleteCartItem={deleteCartItem}
+        />
+    );
 }
 
-describe('Shopping cart renders cart items', () => {
+describe('Test adding and removing items', () => {
     test('Cart items are shown in shopping cart', () => {
-        // const mockCallback = jest.fn();
-        // render(<ShoppingCart cart={cart} handleAddToCart={mockCallback} />);
         render(<App />);
 
         const itemName = screen.getByText('OYSTER PERPETUAL EXPLORER');
@@ -60,6 +71,25 @@ describe('Shopping cart renders cart items', () => {
         expect(itemCost.textContent).toBe('$10200');
         expect(itemQty.value).toBe('Qty: 2');
         expect(image).toHaveAttribute('src', 'rolex-explorer.png');
+    });
+
+    test('Clicking delete button removes item from cart', () => {
+        render(<App />);
+
+        // Get the second close button (i.e. skip the close shopping cart button)
+        const deleteBtn = screen.getAllByText('×')[1];
+        screen.debug(deleteBtn);
+
+        act(() => UserEvent.click(deleteBtn));
+
+        const images = screen.getAllByRole('img');
+        const remainingItem = screen.getByText('Prospex Land SPB123');
+        // should only be one item's image
+        expect(images.length).toBe(1);
+        // remaining item is still there
+        expect(remainingItem.textContent).toBe('Prospex Land SPB123');
+        // but deleted item is gone
+        expect(screen.queryByText('OYSTER PERPETUAL EXPLORER')).toBeNull();
     });
 });
 
