@@ -6,7 +6,7 @@ import UserEvent from '@testing-library/user-event';
 import ShoppingCart from '../ShoppingCart';
 import explorerImg from '../../assets/images/rolex-explorer.png';
 
-export default function App(props) {
+export default function App() {
     const [cart, setCart] = useState({
         124270: {
             itemInfo: {
@@ -40,8 +40,6 @@ export default function App(props) {
         }
 
         setCart(myCart);
-
-        // console.log(cart);
     };
 
     return <ShoppingCart cart={cart} handleAddToCart={handleAddToCart} />;
