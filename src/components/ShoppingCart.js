@@ -36,7 +36,9 @@ function ShoppingCart(props) {
                             <button
                                 onClick={() => handleAddToCart(
                                     id,
-                                    value.quantity > 0 ? value.quantity - 1 : value.quantity,
+                                    value.quantity > 0 ?
+                                        parseInt(value.quantity, 10) - 1 :
+                                        value.quantity,
                                     true,
                                 )
                                 }
@@ -45,7 +47,8 @@ function ShoppingCart(props) {
                             </button>
                             <input type="text" value={`Qty: ${value.quantity}`} readOnly />
                             <button
-                                onClick={() => handleAddToCart(id, value.quantity + 1, true)}
+                                onClick={() => handleAddToCart(id, parseInt(value.quantity, 10) + 1, true)
+                                }
                                 className="button"
                             >
                                 +
