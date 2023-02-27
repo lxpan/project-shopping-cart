@@ -110,4 +110,16 @@ describe('Test calculation of subtotal and grand total costs', () => {
         expect(subTotal.textContent).toBe('Subtotal: $20400');
         // expect(grandTotal.textContent).toBe('Grand total: $20400');
     });
+
+    test('Calculate grand total with multiple items in cart', () => {
+        const subTotals = screen.getAllByText(/Subtotal/);
+        const firstSubTotal = subTotals[0];
+        const secondSubtotal = subTotals[1];
+
+        expect(firstSubTotal.textContent).toBe('Subtotal: $20400');
+        expect(secondSubtotal.textContent).toBe('Subtotal: $725');
+
+        const grandTotal = screen.getByText(/Grand total/);
+        expect(grandTotal.textContent).toBe('Grand total: $21125');
+    });
 });
