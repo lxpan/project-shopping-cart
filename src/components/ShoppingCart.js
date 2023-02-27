@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import '../styles/ShoppingCart.css';
+import cartIcon from '../assets/icons/shopping-cart-60.png';
 
 function ShoppingCart(props) {
     const { cart, handleAddToCart, deleteCartItem } = props;
@@ -95,9 +96,13 @@ function ShoppingCart(props) {
                 <div className="shopping-cart-items">{myCart()}</div>
                 <div className="shopping-cart-total-costs">Grand total: ${getGrandTotalCost()}</div>
             </div>
-            <span style={{ fontSize: '30px', cursor: 'pointer' }} onClick={openNav}>
-                &#9776;
-            </span>
+
+            <img
+                onClick={openNav}
+                style={{ height: '30px', cursor: 'pointer' }}
+                src={cartIcon}
+                alt=""
+            />
         </div>
     );
 }
