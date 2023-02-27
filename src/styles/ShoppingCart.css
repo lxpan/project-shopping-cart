@@ -52,13 +52,15 @@
 
 .cart-item-cost {
     display: flex;
+    justify-content: center;
     align-items: center;
-    color: red;
 }
 
 .cart-item-subtotal {
     display: flex;
     align-items: center;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
 .shopping-cart-total-costs {
@@ -67,11 +69,13 @@
     justify-content: flex-end;
     margin-right: 20px;
     font-size: 1.5rem;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .cart-item-container {
     display: grid;
-    grid-template-columns: 100px 200px 1fr 1fr;
+    grid-template-columns: 100px 200px 100px 150px;
 }
 
 .cart-item-image img {
