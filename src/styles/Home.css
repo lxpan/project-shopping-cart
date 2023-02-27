@@ -18,6 +18,12 @@
 .home-middle img,
 .home-right img {
     height: 300px;
+    pointer-events: none;
+    user-select: none;
+    -drag: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
 }
 
 .attribution {
@@ -31,7 +37,7 @@
 .home-title {
     position: absolute;
     color: white;
-
+    user-select: none;
     left: 0;
     right: 0;
     margin-left: auto;
