@@ -103,9 +103,9 @@ function ShoppingCart(props) {
     return (
         <div className="shopping-cart-container">
             <div id="mySidenav" className="sidenav">
-                <a href="#" className="closebtn" onClick={closeNav}>
+                <span className="closebtn" onClick={closeNav}>
                     &times;
-                </a>
+                </span>
                 {cartDisplay()}
             </div>
             <img
