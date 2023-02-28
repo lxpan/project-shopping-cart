@@ -1,5 +1,6 @@
 :root {
     --shopping-cart-background-colour: #b1c4d8;
+    --shopping-cart-margin-left: 40px;
 }
 
 /* The side navigation menu */
@@ -23,6 +24,13 @@
     /* Place content 60px from the top */
     transition: 0.5s;
     /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.shopping-cart-no-item-msg {
+    display: flex;
+    margin-left: var(--shopping-cart-margin-left);
+    color: black;
+    font-size: 2rem;
 }
 
 .shopping-cart-items {

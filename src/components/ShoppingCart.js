@@ -87,16 +87,27 @@ function ShoppingCart(props) {
         return grandTotal;
     };
 
+    const cartDisplay = () => {
+        if (Object.keys(cart).length === 0) {
+            console.log(Object.keys(cart));
+            return <div className="shopping-cart-no-item-msg">Your Watch cart is empty.</div>;
+        }
+        return (
+            <>
+                <div className="shopping-cart-items">{myCart()}</div>
+                <div className="shopping-cart-total-costs">Grand total: ${getGrandTotalCost()}</div>
+            </>
+        );
+    };
+
     return (
         <div className="shopping-cart-container">
             <div id="mySidenav" className="sidenav">
                 <a href="#" className="closebtn" onClick={closeNav}>
                     &times;
                 </a>
-                <div className="shopping-cart-items">{myCart()}</div>
-                <div className="shopping-cart-total-costs">Grand total: ${getGrandTotalCost()}</div>
+                {cartDisplay()}
             </div>
-
             <img
                 onClick={openNav}
                 style={{ height: '30px', cursor: 'pointer' }}
