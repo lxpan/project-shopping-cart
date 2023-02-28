@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/project-shopping-cart/static/css/main.512a4f4a.css",
-    "main.js": "/project-shopping-cart/static/js/main.c93c38af.js",
+    "main.js": "/project-shopping-cart/static/js/main.72ae2bc9.js",
     "static/media/markus-spiske.jpg": "/project-shopping-cart/static/media/markus-spiske.ec3a73b79ec85e990a4f.jpg",
     "static/media/woodland.jpg": "/project-shopping-cart/static/media/woodland.da5465ea21d00ab686a8.jpg",
     "static/media/SPB123J1.png": "/project-shopping-cart/static/media/SPB123J1.2fb7d684eade23450d61.png",
@@ -12,10 +12,10 @@
     "static/media/hamilton-murph.avif": "/project-shopping-cart/static/media/hamilton-murph.c51589c75ff2cbbeeb10.avif",
     "index.html": "/project-shopping-cart/index.html",
     "main.512a4f4a.css.map": "/project-shopping-cart/static/css/main.512a4f4a.css.map",
-    "main.c93c38af.js.map": "/project-shopping-cart/static/js/main.c93c38af.js.map"
+    "main.72ae2bc9.js.map": "/project-shopping-cart/static/js/main.72ae2bc9.js.map"
   },
   "entrypoints": [
     "static/css/main.512a4f4a.css",
-    "static/js/main.c93c38af.js"
+    "static/js/main.72ae2bc9.js"
   ]
 }
