@@ -31,15 +31,12 @@ function Home() {
             </div>
             <div className="home-left" style={style.left}>
                 <img src={watchLeft} alt="" srcSet="" />
-                <div className="attribution">Photo by Markus Spiske</div>
             </div>
             <div className="home-middle" style={style.middle}>
                 <img src={watchMiddle} alt="" srcSet="" />
-                <div className="attribution">Photo by Lukasz Szmigiel</div>
             </div>
             <div className="home-right" style={style.right}>
                 <img src={watchRight} alt="" srcSet="" />
-                <div className="attribution">Photo by Yoal Desurmont</div>
             </div>
         </div>
     );

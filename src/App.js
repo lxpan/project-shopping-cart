@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Header from './components/Header';
 import Shop from './components/Shop';
 import shopItems from './shopItems';
+import About from './components/About';
 import './App.css';
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
                         element={<Shop shopItems={shopItems} handleAddToCart={handleAddToCart} />}
                         exact
                     />
+                    <Route path="/about" element={<About />} />
                 </Routes>
             </BrowserRouter>
         </div>

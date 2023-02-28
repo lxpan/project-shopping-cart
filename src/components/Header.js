@@ -25,6 +25,10 @@ function Header(props) {
                 <Link style={navStyle} to="shop">
                     <li>Shop</li>
                 </Link>
+
+                <Link style={navStyle} to="about">
+                    <li>About</li>
+                </Link>
                 <li>
                     <div className="cart-trigger">
                         {`Cart (${itemsInCartAmount})`}

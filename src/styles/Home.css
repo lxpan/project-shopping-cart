@@ -26,14 +26,6 @@
     -webkit-user-select: none;
 }
 
-.attribution {
-    font-size: 0.8rem;
-    font-style: italic;
-    color: white;
-    position: absolute;
-    bottom: 0;
-}
-
 .home-title {
     position: absolute;
     color: white;
